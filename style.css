@@ -83,11 +83,16 @@ body * {
   left: 0;
   z-index: 1; /* Posicionamento do elemento na CAMADA */
   transform: translateY(-50%);
+
+  animation: slide-back 0.2s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--bg-icon-hover);
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
 }
 
 #switch span {
@@ -174,5 +179,30 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/*animation dark and light mode button */
+
+/*ida*/
+@keyframes slide-in {
+  from {
+    /*de*/
+    left: 0;
+  }
+  to {
+    /*para*/
+    left: 50%;
+  }
+}
+/*volta*/
+@keyframes slide-back {
+  from {
+    /*de*/
+    left: 50%;
+  }
+  to {
+    /*para*/
+    left: 0;
   }
 }
