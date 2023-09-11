@@ -1,0 +1,164 @@
+/* Definindo as configuração globais para DEFAULT, isso possibilita melhor manuseio do CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Definição das váriaveis para o Dark Mode*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --border-button-color: rgba(255, 255, 255, 0.5);
+  --bg-button-color: rgba(255, 255, 255, 0.05);
+  --bg-button-color-hover: rgba(0, 0, 0, 0.02);
+  --bg-icon-hover: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+/* Definição das váriaveis para o Light Mode*/
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --border-button-color: rgba(0, 0, 0, 0.5);
+  --bg-button-color: rgba(0, 0, 0, 0.05);
+  --bg-button-color-hover: rgba(0, 0, 0, 0.02);
+  --bg-icon-hover: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+/* Configuraçãoes do Body*/
+body {
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/*Posicionamento da imagem de profile*/
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+/*Ajuste de tamanho da imagem de profile*/
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* switch */
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1; /* Posicionamento do elemento na CAMADA */
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--bg-button-color);
+  border: 1px solid var(--border-button-color);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /*column = um a baixo do outro*/
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  /*Centralização*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 16px 24px;
+
+  background: var(--bg-button-color);
+  border-radius: 8px;
+  border: 1px solid var(--border-button-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s; /*Transição*/
+}
+
+/*Configurações do "Quando passar o mouse em cima"*/
+ul li a:hover {
+  background: var(--bg-button-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+  /*Centralização*/
+  display: flex;
+  justify-content: center;
+
+  font-size: 24px;
+  padding: 24px 0;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+/*Configurações do "Quando passar o mouse em cima"*/
+#social-links a:hover {
+  background: var(--bg-icon-hover);
+}
+
+/*Configurações do rodapé*/
+footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+}
