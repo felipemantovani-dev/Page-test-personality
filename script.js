@@ -1,9 +1,9 @@
 // respostas em questões
 const answers = {
-  0: 0,
-  1: 0,
-  2: 0,
-  3: 0,
+  Analista: 0,
+  Diplomatas: 0,
+  Sentinelas: 0,
+  Exploradores: 0,
 }
 
 // Array de perguntas
@@ -162,9 +162,9 @@ nextButton.addEventListener("click", () => {
         }
       }
 
-      alert(`Quiz finalizado! Parabéns! Você respondeu: ${maisRespostas} `)
+      alert(`Quiz finalizado! Parabéns! Clique no "OK" para ver qual é sua personalidade`)
 
-      window.location = `/resultado.html?maisRespostas=${maisRespostas}`
+      window.location = `/${maisRespostas}.html`
     }
   } else {
     // O usuário não selecionou uma resposta

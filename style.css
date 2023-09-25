@@ -56,6 +56,10 @@ button {
   cursor: pointer;
 }
 
+button a {
+  text-decoration: none;
+}
+
 #startButton {
   display: flex;
   justify-content: center;
