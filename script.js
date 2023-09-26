@@ -124,7 +124,25 @@ function showQuestion() {
   })
 }
 
-// Verificar a resposta e avançar para a próxima pergunta
+// Função para determinar a resposta mais escolhida
+function determineResult() {
+  let maiorValor = -Infinity // Inicializa com o menor valor possível
+  let maisRespostas = ""
+
+  for (const chave in answers) {
+    if (answers.hasOwnProperty(chave)) {
+      const valor = answers[chave]
+      if (valor > maiorValor) {
+        maiorValor = valor
+        maisRespostas = chave
+      }
+    }
+  }
+
+  return maisRespostas
+}
+
+// Evento de Clique no Botão "Próxima" (`nextButton`)
 nextButton.addEventListener("click", () => {
   // resposta selecionada
   const selectedOption = document.querySelector('input[name="answer"]:checked')
@@ -148,24 +166,11 @@ nextButton.addEventListener("click", () => {
     if (currentQuestion < questions.length) {
       showQuestion()
     } else {
-      // O quiz terminou, você pode exibir uma mensagem ou redirecionar o usuário
-      let maiorValor = -Infinity // Inicializa com o menor valor possível
-      let maisRespostas = 0
+      // Todas as perguntas foram respondidas, determinar a resposta mais escolhida
+      const result = determineResult()
 
-      for (const chave in answers) {
-        if (answers.hasOwnProperty(chave)) {
-          const valor = answers[chave]
-          if (valor > maiorValor) {
-            maiorValor = valor
-            maisRespostas = chave
-            console.log(maisRespostas)
-          }
-        }
-      }
-      alert(
-        `Quiz finalizado! Parabéns! Clique no "OK" para ver qual é sua personalidade`
-      )
-      switch (maisRespostas) {
+      // Redirecionar para a página apropriada com base nas respostas
+      switch (result) {
         case "0":
           window.location.href =
             "page-test-personality.vercel.app/Analista.html"
@@ -185,7 +190,7 @@ nextButton.addEventListener("click", () => {
         default:
           // Caso não haja uma resposta clara, você pode fazer algo aqui, como redirecionar para uma página padrão.
           window.location.href =
-            "page-test-personality.vercel.app/questions.html"
+            "page-test-personality.vercel.app/Questions.html"
           break
       }
     }
