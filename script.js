@@ -162,9 +162,11 @@ nextButton.addEventListener("click", () => {
         }
       }
 
-      alert(`Quiz finalizado! Parabéns! Clique no "OK" para ver qual é sua personalidade`)
+      alert(
+        `Quiz finalizado! Parabéns! Clique no "OK" para ver qual é sua personalidade`
+      )
 
-      window.location = `/${maisRespostas}.html`
+      window.location = `https://page-test-personality-5pccd8itl-felipemantovani-dev.vercel.app/${maisRespostas}.html`
     }
   } else {
     // O usuário não selecionou uma resposta
