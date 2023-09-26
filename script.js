@@ -1,9 +1,9 @@
 // respostas em questões
-const answers = {
-  Analista: 0,
-  Diplomatas: 0,
-  Sentinelas: 0,
-  Exploradores: 0,
+var answers = {
+  0: 0,
+  1: 0,
+  2: 0,
+  3: 0,
 }
 
 // Array de perguntas
@@ -158,15 +158,36 @@ nextButton.addEventListener("click", () => {
           if (valor > maiorValor) {
             maiorValor = valor
             maisRespostas = chave
+            console.log(maisRespostas)
           }
         }
       }
-
       alert(
         `Quiz finalizado! Parabéns! Clique no "OK" para ver qual é sua personalidade`
       )
-
-      window.location = `https://page-test-personality.vercel.app/${maisRespostas}.html`
+      switch (maisRespostas) {
+        case "0":
+          window.location.href =
+            "page-test-personality.vercel.app/Analista.html"
+          break
+        case "1":
+          window.location.href =
+            "page-test-personality.vercel.app/Diplomatas.html"
+          break
+        case "2":
+          window.location.href =
+            "page-test-personality.vercel.app/Sentinelas.html"
+          break
+        case "3":
+          window.location.href =
+            "page-test-personality.vercel.app/Exploradores.html"
+          break
+        default:
+          // Caso não haja uma resposta clara, você pode fazer algo aqui, como redirecionar para uma página padrão.
+          window.location.href =
+            "page-test-personality.vercel.app/questions.html"
+          break
+      }
     }
   } else {
     // O usuário não selecionou uma resposta
