@@ -173,24 +173,24 @@ nextButton.addEventListener("click", () => {
       switch (result) {
         case "0":
           window.location.href =
-            "page-test-personality.vercel.app/Analista.html"
+            "/Analista.html"
           break
         case "1":
           window.location.href =
-            "page-test-personality.vercel.app/Diplomatas.html"
+            "/Diplomatas.html"
           break
         case "2":
           window.location.href =
-            "page-test-personality.vercel.app/Sentinelas.html"
+            "/Sentinelas.html"
           break
         case "3":
           window.location.href =
-            "page-test-personality.vercel.app/Exploradores.html"
+            "/Exploradores.html"
           break
         default:
           // Caso não haja uma resposta clara, você pode fazer algo aqui, como redirecionar para uma página padrão.
           window.location.href =
-            "page-test-personality.vercel.app/Questions.html"
+            "/Questions.html"
           break
       }
     }
